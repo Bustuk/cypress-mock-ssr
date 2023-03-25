@@ -1,9 +1,9 @@
-const connect = require("connect")
-const request = require("supertest")
-const { cypressMockMiddleware } = require("..")
+import connect from "connect"
+import request from "supertest"
+import { cypressMockMiddleware } from "../src/middleware"
 
 describe("Cypress Mock SSR Middleware", function () {
-  let app
+  let app: connect.Server | null
   beforeEach(function () {
     app = connect()
     app.use(cypressMockMiddleware())
